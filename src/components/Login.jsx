@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import {login as authLogin} from '../store/authSlice'
 import {Button, Input, Logo} from './index'
@@ -72,7 +72,7 @@ function Login() {
                 />
                 <Button
                 type="submit"
-                className="w-full"
+                className="w-full hover:cursor-pointer"
                 >Sign in</Button>
             </div>
         </form>
