@@ -12,7 +12,7 @@ export class AuthService {
     // the object of the class then automatically the constructor will be
     // called
    constructor(){
-    this.client= new Client();
+    
     console.log("Project ID:", config.projectId);
 
     this.client
@@ -23,7 +23,7 @@ export class AuthService {
 
    async createAccount({name, email, password}){  // destructuring the parameter(which will be generally object)
     try{
-        const userAccount = await this.account.create(ID.unique(), name, email, password);
+        const userAccount = await this.account.create(ID.unique(), email, password,name);
         if(userAccount){
             // used to call another function
             return this.login({email, password});

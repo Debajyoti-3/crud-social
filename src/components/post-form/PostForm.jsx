@@ -1,6 +1,6 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Button, Input, RTE, Select } from "..";
+import { Button, Input, RTE, Select } from "../index";
 import appwriteService from "../../Appwrite/conf";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -60,7 +60,7 @@ export default function PostForm({ post }) {
         return "";
     }, []);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const subscription = watch((value, { name }) => {
             if (name === "title") {
                 setValue("slug", slugTransform(value.title), { shouldValidate: true });
@@ -113,7 +113,7 @@ export default function PostForm({ post }) {
                     className="mb-4"
                     {...register("status", { required: true })}
                 />
-                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
+                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full" >
                     {post ? "Update" : "Submit"}
                 </Button>
             </div>

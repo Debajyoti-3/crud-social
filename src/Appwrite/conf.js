@@ -123,7 +123,7 @@ async deleteFile(fileId){
     }
 }
 
-getFilePreveiw(fileId){
+getFilePreview(fileId){
     return this.bucket.getFilePreview(
         config.appwriteBucketId,
         fileId
