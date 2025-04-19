@@ -16,7 +16,7 @@ posts, view about that post and most amazing thing is that here you will be able
    ```powershell
    https://github.com/Debajyoti-3/crud-social.git
    ```
-3. ### changes you want to make
+3. ### make changes you want to make
 4. ### make a PR
 5. ### PR Review and Merge
 ## Thank You
