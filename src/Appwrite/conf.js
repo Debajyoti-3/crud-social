@@ -17,17 +17,17 @@ constructor(){
     
 }
 
-async createPost({title, slug, featuredImage, status, userId}){
+async createPost({title, slug, featuredImage, status, userid}){
     try {
         return await this.databases.createDocument(
-            config.appwriteDatabaseId,
-            config.appwriteCollectionId,
+            config.databaseId,
+            config.collectionId,
             slug,
             {
                 title,
                 featuredImage,
                 status, 
-                userId,
+                userid,
                 content
             }
         )
@@ -40,8 +40,8 @@ async createPost({title, slug, featuredImage, status, userId}){
 async updatePost(slug, {status,title, featuredImage, content}){
     try {
         return await this.databases.updateDocument(
-            config.appwritedatabaseId,
-            config.appwriteCollectionId,
+            config.databaseId,
+            config.collectionId,
             slug,
             {
                 title,
@@ -59,8 +59,8 @@ async updatePost(slug, {status,title, featuredImage, content}){
 async deletePost(slug){
     try {
        await this.databases.deleteDocument(
-        config.appwriteDatabaseId,
-        config.appwriteCollectionId,
+        config.databaseId,
+        config.collectionId,
         slug
        ) 
        return true
@@ -72,8 +72,8 @@ async deletePost(slug){
 async getPost(slug){
     try {
         return await this.databases.getDocument(
-            config.appwriteDatabaseId,
-            config.appwriteCollectionId,
+            config.databaseId,
+            config.collectionId,
             slug
         )
     } catch (error) {
@@ -85,8 +85,8 @@ async getPost(slug){
 async getPosts(queries = [Query.equal("status", "active")]){
     try {
         return await this.databases.listDocuments(
-            config.appwriteDatabaseId,
-            config.appwriteCollectionId,
+            config.databaseId,
+            config.collectionId,
             queries,
         )
     } catch (error) {
@@ -100,7 +100,7 @@ async getPosts(queries = [Query.equal("status", "active")]){
 async uploadFile(file){
     try {
         return await this.bucket.createFile(
-            config.appwriteBucketId,
+            config.bucketId,
             ID.unique(),
             file
         )
@@ -113,7 +113,7 @@ async uploadFile(file){
 async deleteFile(fileId){
     try {
         return await this.bucket.deleteFile(
-            config.appwriteBucketId,
+            config.bucketId,
             fileId
         )
         return true
@@ -125,7 +125,7 @@ async deleteFile(fileId){
 
 getFilePreview(fileId){
     return this.bucket.getFilePreview(
-        config.appwriteBucketId,
+        config.bucketId,
         fileId
     )
 }
