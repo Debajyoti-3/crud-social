@@ -111,9 +111,12 @@ export class Service {
     }
   }
 
-  getFilePreview(fileId) {
-    return this.bucket.getFilePreview(config.bucketId, fileId);
-  }
+async getFilePreview(fileId){
+    return this.bucket.getFilePreview(
+        config.bucketId,
+        fileId
+    )
+}
 }
 
 const service = new Service();
