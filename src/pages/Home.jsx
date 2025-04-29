@@ -19,9 +19,10 @@ function Home() {
                 <Container>
                     <div className="flex flex-wrap">
                         <div className="p-2 w-full">
-                            <h1 className="text-2xl font-bold hover:text-gray-500">
+                            <h1 className='font-bold text-[50px]  hover:text-gray-500 my-1.5'>Your Blogging Starts Here...</h1>
+                            <h4 className="text-[17px] ">
                                 Login to Read Posts
-                            </h1>
+                            </h4>
                         </div>
                     </div>
                 </Container>

@@ -114,6 +114,7 @@ export class Service {
 async getFilePreview(fileId){
     return this.bucket.getFilePreview(
         config.bucketId,
+        config.bucketId,
         fileId
     )
 }
