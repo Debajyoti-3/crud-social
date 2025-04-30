@@ -1,8 +1,11 @@
 import React from 'react'
+import Logox from '../assets/Logox.png'
 
-function Logo({width='100px'}) {
+function Logo() {
   return (
-    <div>Logo</div>
+    <div>
+      <img src={Logox} alt="logo" />
+    </div>
   )
 }
 

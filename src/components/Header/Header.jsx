@@ -42,9 +42,9 @@ function Header() {
       <Container>
       <nav className='flex'>
         
-        <div className='mr-4'>
+        <div className='mr-4 h-[50px] w-[50px] rounded-[30px]'>
           <Link to='/'>
-          <Logo width='70px' />
+          <Logo  />
           </Link>
         </div>
         
